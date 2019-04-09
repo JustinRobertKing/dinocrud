@@ -1,0 +1,26 @@
+body {
+	background-color: hotpink;
+	text-align: center;
+	text-transform: uppercase;
+	color: white;
+}
+
+h1 {
+	font-size: 80px;
+}
+
+h3 {
+	font-size: 30px;
+}
+
+.nav-bar li {
+	display: inline;
+	margin-left: 1em;
+}
+
+a {
+	font-size: 30px;
+	text-decoration: none;
+	color: white;
+}
+

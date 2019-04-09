@@ -5,11 +5,13 @@ var app = express()
 
 app.set('view engine', 'ejs')
 app.use(layouts)
+app.use('/', express.static('public'))
+app.use(express.urlencoded({ extended: false} ))
+app.use('/dinosaurs', require('./controllers/dinosaurs'))
 
 app.get('/', (req, res) => {
-	res.send('Stubbalubs')
+	res.render('home')
 })
-
 
 
 
