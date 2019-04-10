@@ -1,1 +1,9 @@
 <h1>Edit</h1>
+
+<form method="POST" action="/cryptids/<%= cryptidIndex %>/?_method=PUT">
+	<label for="cryptid-name">Name</label>
+	<input type="text" name="name" id="cryptid-name" value="<%= myCryptid.name %>">
+	<label for="cryptid-type">Type</label>
+	<input type="text" name="type" id="cryptid-type" value="<%= myCryptid.type %>">
+	<input type="submit" value="Update">
+</form>	

@@ -1,3 +1,8 @@
 <h1><%= myDino.name %></h1>
 <br>
 <h3>He is a <%= myDino.type %></h3>
+<br>
+<form method="POST" action="/dinosaurs/<%= dinoIndex %>/?_method=DELETE">
+	<input type="submit" value="DELETE">
+</form>
+<a href="/dinosaurs/edit/<%= dinoIndex %>">Edit</a>

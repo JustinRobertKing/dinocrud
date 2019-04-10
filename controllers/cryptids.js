@@ -44,7 +44,16 @@ router.get('/:id', (req, res) => {
 
 // edit /edit/:id GET
 router.get('/edit/:id', (req, res) => {
-	res.render('cryptids/edit')
+	var cryptidIndex = parseInt(req.params.id)
+	res.render('cryptids/edit', { myCryptid: cryptidData[cryptidIndex], cryptidIndex: cryptidIndex })
+})
+
+// update /:id PUT
+router.put('/:id', (req, res) => {
+	cryptidData[req.params.id].name = req.body.name
+	cryptidData[req.params.id].type = req.body.type
+	fs.writeFileSync('./cryptids.json', JSON.stringify(cryptidData))
+	res.redirect(`/cryptids/${req.params.id}`)	
 })
 
 // destroy /:id DELETE 
