@@ -1,8 +1,13 @@
 <h1>All Cryptids</h1>
 
+<form method="GET" action="/cryptids">
+	<label for="filter-cryptids">Search by name</label>
+	<input id="filter-cryptids" type="text" name="searchParams">
+	<input type="submit" value="Search">
+</form>
 <h3>List o' Cryptids:</h3>
 <ul>
-	<% myCryptids.forEach((cryptid, index) => { %>
-		<li><a href="/cryptids/<%= index %>"><%= cryptid.name %>: <%= cryptid.type %></a></li>
+	<% myCryptids.forEach((cryptid) => { %>
+		<li><a href="/cryptids/<%= cryptid.id %>"><%= cryptid.cryptid.name %>: <%= cryptid.cryptid.type %></a></li>
 	<% }) %>
 </ul>

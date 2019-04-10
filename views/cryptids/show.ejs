@@ -1,3 +1,7 @@
 <h1><%= myCryptid.name %></h1>
 <br>
+<form method="POST" action="/cryptids/<%= cryptidIndex %>/?_method=DELETE">
+	<input type="submit" value="DELETE <%= myCryptid.name %>">
+</form>
+<a href="/cryptids/edit/<%= cryptidIndex %>">Edit <%= myCryptid.name %></a>
 <img src="<%= myCryptid.img_url %>">

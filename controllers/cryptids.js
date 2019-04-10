@@ -8,7 +8,20 @@ cryptidData = JSON.parse(cryptidData)
 
 // index / GET
 router.get('/', (req, res) => {
-	res.render('cryptids/index', { myCryptids: cryptidData })
+	// add a filter function
+	var searchParams = req.query.searchParams
+	var activeCryptids = []
+	cryptidData.forEach((cryptid, index) => {
+		activeCryptids.push({ cryptid: cryptid, id: index })
+	})
+
+	if (searchParams) {
+		activeCryptids = activeCryptids.filter((cryptid, index) => {
+			return cryptid.cryptid.name.toLowerCase().includes(searchParams.toLowerCase())
+		})
+	}
+
+	res.render('cryptids/index', { myCryptids: activeCryptids })
 })
 
 // new /new GET
@@ -26,7 +39,7 @@ router.post('/', (req, res) => {
 // show /:id GET
 router.get('/:id', (req, res) => {
 	var cryptidIndex = parseInt(req.params.id)
-	res.render('cryptids/show', { myCryptid: cryptidData[cryptidIndex] })
+	res.render('cryptids/show', { myCryptid: cryptidData[cryptidIndex], cryptidIndex: cryptidIndex})
 })
 
 // edit /edit/:id GET
