@@ -1,0 +1,8 @@
+<h1>All Cryptids</h1>
+
+<h3>List o' Cryptids:</h3>
+<ul>
+	<% myCryptids.forEach((cryptid, index) => { %>
+		<li><a href="/cryptids/<%= index %>"><%= cryptid.name %>: <%= cryptid.type %></a></li>
+	<% }) %>
+</ul>

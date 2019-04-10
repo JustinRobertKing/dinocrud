@@ -10,17 +10,22 @@ h1 {
 }
 
 h3 {
-	font-size: 30px;
+	font-size: 50px;
 }
 
 .nav-bar li {
 	display: inline;
 	margin-left: 1em;
+	font-size: 30px;
 }
 
 a {
 	font-size: 30px;
 	text-decoration: none;
 	color: white;
+}
+
+img {
+	height: 500px;
 }
 

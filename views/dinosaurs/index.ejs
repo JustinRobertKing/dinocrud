@@ -2,7 +2,7 @@
 
 <h3>List o' Dinos:</h3>
 <ul>
-	<% myDinos.forEach((dino) => { %>
-		<li><%= dino.name %> is a <%= dino.type %></li>
+	<% myDinos.forEach((dino, index) => { %>
+		<li><a href="/dinosaurs/<%= index %>"><%= dino.name %> is a <%= dino.type %></a></li>
 	<% }) %>
 </ul>
