@@ -19,7 +19,7 @@ router.get('/new', (req, res) => {
 // create / POST
 router.post('/', (req, res) => {
 	dinoData.push(req.body)
-	fs.writeFileSync('.dinosaurs.json', JSON.stringify(dinoData))
+	fs.writeFileSync('./dinosaurs.json', JSON.stringify(dinoData))
 	res.redirect('/dinosaurs')
 })
 

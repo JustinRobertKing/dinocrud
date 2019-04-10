@@ -19,7 +19,7 @@ router.get('/new', (req, res) => {
 // create / POST
 router.post('/', (req, res) => {
 	cryptidData.push(req.body)
-	fs.writeFileSync('.cryptids.json', JSON.stringify(cryptidData))
+	fs.writeFileSync('./cryptids.json', JSON.stringify(cryptidData))
 	res.redirect('/cryptids')
 })
 
@@ -33,9 +33,5 @@ router.get('/:id', (req, res) => {
 router.get('/edit/:id', (req, res) => {
 	res.render('cryptids/edit')
 })
-
-// update /:id PUT
-
-// destroy /delete/:id DELETE
 
 module.exports = router
