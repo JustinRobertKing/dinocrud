@@ -47,4 +47,21 @@ router.get('/edit/:id', (req, res) => {
 	res.render('cryptids/edit')
 })
 
+// destroy /:id DELETE 
+router.delete('/:id', (req, res) => {
+	cryptidData.splice(req.params.id, 1)
+	fs.writeFileSync('./cryptids.json', JSON.stringify(cryptidData))
+	res.redirect('/cryptids')
+})
+
 module.exports = router
+
+
+
+
+
+
+
+
+
+
